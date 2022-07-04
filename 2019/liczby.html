@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl2.css">
+    <title>Ciągi liczbowe</title>
+</head>
+<body>
+    <div id="baner1">
+        <h2>Poznaj Ciągi Liczbowe</h2>
+    </div>
+    <div id="baner2">
+        <h5><a href="liczby.html">Ciągi arytmetyczne</a></h5>
+    </div>
+    <div id="baner3">
+        <h5><a href="fib.html">Ciągi Fibonacciego</a></h5>
+    </div>
+    <div id="baner4">
+        <img src="obraz1.png" alt="Fibonacci">
+    </div>
+    <div id="lewy">
+        <ol>
+            <li>ciągi arytmetyczne</li>
+            <li>ciągi geometryczne</li>
+            <li>ciągi Fibonacciego</li>
+        </ol>
+    </div>
+    <div id="prawy">
+        <h2>Generowanie ciągu arytmetycznego</h2>
+        Pierwszy wyraz A1:<input type="number" id="a1"><br>
+        Różnica ciągu R:<input type="number" id="r"><br>
+        Liczba wyrazów w ciągu N:<input type="number" id="n"><br>
+        <input type="submit" value="Generuj ciąg" onclick="Oblicz()">
+        <div id="wynik"></div>
+    </div>
+    <div id="footer">
+        <p>Autor: 000000000000</p>
+    </div>
+    <script>
+        function Oblicz(){
+            var a1 = parseInt(document.getElementById("a1").value);
+            var r = parseInt(document.getElementById("r").value);
+            var n = parseInt(document.getElementById("n").value);
+            var a=0;
+            var liczby = [];
+            var ciag=a1;
+            while(a<n){
+                a++;
+                liczby.push(ciag);
+                ciag+=r;
+            }
+            document.getElementById("wynik").innerHTML="ciag arytmetyczny zawiera wyrazy: "+liczby;
+            console.log(liczby)
+        }
+    </script>
+</body>
+</html>
